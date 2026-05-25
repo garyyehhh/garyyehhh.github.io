@@ -1,0 +1,22 @@
+---
+layout: default
+---
+
+<article class="article">
+  <header class="article-header">
+    <p class="eyebrow">{{ page.source_type | default: "Reflection" }}</p>
+    <h1>{{ page.title }}</h1>
+    {% if page.summary %}
+      <p class="lede">{{ page.summary }}</p>
+    {% endif %}
+    <div class="meta-row">
+      {% if page.date %}<span>{{ page.date | date: "%B %-d, %Y" }}</span>{% endif %}
+      {% if page.source %}<span>{{ page.source }}</span>{% endif %}
+      {% if page.tags %}<span>{{ page.tags | join: " / " }}</span>{% endif %}
+    </div>
+  </header>
+
+  <div class="article-body">
+    {{ content }}
+  </div>
+</article>

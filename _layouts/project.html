@@ -1,0 +1,22 @@
+---
+layout: default
+---
+
+<article class="article">
+  <header class="article-header">
+    <p class="eyebrow">Project</p>
+    <h1>{{ page.title }}</h1>
+    {% if page.summary %}
+      <p class="lede">{{ page.summary }}</p>
+    {% endif %}
+    <div class="meta-row">
+      {% if page.year %}<span>{{ page.year }}</span>{% endif %}
+      {% if page.status %}<span>{{ page.status }}</span>{% endif %}
+      {% if page.tools %}<span>{{ page.tools | join: " / " }}</span>{% endif %}
+    </div>
+  </header>
+
+  <div class="article-body">
+    {{ content }}
+  </div>
+</article>

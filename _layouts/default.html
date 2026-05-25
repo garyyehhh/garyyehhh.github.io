@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+    <meta name="description" content="{{ page.description | default: site.description }}">
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Skip to content</a>
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="{{ '/' | relative_url }}">
+          <span class="brand-mark">GW</span>
+          <span>
+            <strong>{{ site.title }}</strong>
+            <small>Computer Science Learning Journal</small>
+          </span>
+        </a>
+        <div class="nav-links">
+          <a href="{{ '/notes/' | relative_url }}">Notes</a>
+          <a href="{{ '/projects/' | relative_url }}">Projects</a>
+          <a href="{{ '/reflections/' | relative_url }}">Reflections</a>
+          <a href="{{ '/about/' | relative_url }}">About</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="content">
+      {{ content }}
+    </main>
+
+    <footer class="site-footer">
+      <p>Built as a living archive for learning, building, and asking better questions.</p>
+    </footer>
+  </body>
+</html>

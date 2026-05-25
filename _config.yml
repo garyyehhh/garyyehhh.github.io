@@ -1,0 +1,46 @@
+title: "Gary Wang"
+description: "Notes, projects, and reflections from my journey through computer science."
+url: "https://garyyehhh.github.io"
+baseurl: ""
+
+collections:
+  notes:
+    output: true
+    permalink: /notes/:name/
+  projects:
+    output: true
+    permalink: /projects/:name/
+  reflections:
+    output: true
+    permalink: /reflections/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: "notes"
+    values:
+      layout: "note"
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+  - scope:
+      path: ""
+      type: "reflections"
+    values:
+      layout: "reflection"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+markdown: kramdown
+permalink: pretty
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
