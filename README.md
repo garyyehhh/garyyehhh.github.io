@@ -1,4 +1,4 @@
-# Gary Wang — Computer Science Learning Journal
+# Gary — Computer Science Learning Journal
 
 This is a Jekyll site for documenting a long-term journey through computer science:
 course notes, machine learning study logs, project writeups, and reflections from
