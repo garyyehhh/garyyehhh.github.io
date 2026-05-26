@@ -1,7 +1,7 @@
 ---
 title: About
 permalink: /about/
-description: About Gary Wang and this learning journal.
+description: About Gary Yeh and this learning journal.
 ---
 
 <header class="page-header">

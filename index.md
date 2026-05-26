@@ -2,70 +2,96 @@
 title: Home
 ---
 
-<section class="hero">
-  <div class="hero-inner">
-    <p class="hero-kicker">Computer Science Learning Journal</p>
-    <h1>Learning in public, one idea at a time.</h1>
-    <p>
-      I use this space to document my path through computer science: course notes,
-      machine learning concepts, project writeups, paper notes, and the questions
-      that keep pulling me deeper.
+<section class="home-intro">
+  <div class="home-intro-main">
+    <p class="eyebrow">Computer Science Learning Journal</p>
+    <h1>Gary Yeh</h1>
+    <p class="intro-copy">
+      I am learning computer science in public: notes from courses, talks,
+      papers, and projects, with an emphasis on what I understand, what confused
+      me, and what I want to investigate next.
     </p>
-    <div class="hero-actions">
-      <a class="button primary" href="{{ '/notes/' | relative_url }}">Browse notes</a>
-      <a class="button" href="{{ '/projects/' | relative_url }}">View projects</a>
+    <div class="home-actions">
+      <a class="text-link" href="{{ '/notes/' | relative_url }}">Read notes</a>
+      <a class="text-link" href="{{ '/projects/' | relative_url }}">See projects</a>
     </div>
   </div>
+
+  <aside class="status-panel" aria-label="Current study status">
+    <p class="panel-label">Currently</p>
+    <h2>Cornell CS4780</h2>
+    <p>Machine learning foundations, model evaluation, generalization, and the mathematics behind learning from data.</p>
+    <dl class="mini-stats">
+      <div>
+        <dt>Mode</dt>
+        <dd>Self-study</dd>
+      </div>
+      <div>
+        <dt>Output</dt>
+        <dd>Notes + projects</dd>
+      </div>
+    </dl>
+  </aside>
 </section>
 
-<section class="section">
-  <div class="section-header">
-    <div>
-      <p class="eyebrow">Current focus</p>
-      <h2>Cornell CS4780 and the foundations of machine learning.</h2>
+<section class="home-grid">
+  <div class="home-block full">
+    <div class="block-heading">
+      <p class="eyebrow">Recent Notes</p>
+      <a href="{{ '/notes/' | relative_url }}">All notes</a>
     </div>
-    <p>
-      This first version starts with ML, but the structure is meant to grow into a
-      broader archive of courses, talks, papers, experiments, and portfolio work.
-    </p>
-  </div>
-
-  <div class="grid">
-    <article class="card">
-      <h3>Learning Notes</h3>
-      <p>Concepts explained in my own words, with emphasis on intuition, assumptions, and places where my understanding changed.</p>
-    </article>
-    <article class="card">
-      <h3>Projects</h3>
-      <p>Build logs for technical projects, including motivation, implementation choices, results, and next steps.</p>
-    </article>
-    <article class="card">
-      <h3>Reflections</h3>
-      <p>Short notes from papers, lectures, conferences, and talks that shape how I think about computer science.</p>
-    </article>
-  </div>
-</section>
-
-<section class="section compact">
-  <div class="section-header">
-    <div>
-      <p class="eyebrow">Recent entries</p>
-      <h2>Starting points</h2>
+    <div class="quiet-list">
+      {% assign recent_notes = site.notes | sort: "date" | reverse | slice: 0, 3 %}
+      {% for note in recent_notes %}
+        <article class="quiet-row">
+          <div>
+            <h2><a href="{{ note.url | relative_url }}">{{ note.title }}</a></h2>
+            <p>{{ note.summary }}</p>
+          </div>
+          <span>{{ note.course | default: "Note" }}</span>
+        </article>
+      {% endfor %}
     </div>
-    <p>These are sample entries you can edit, duplicate, or replace as your notes mature.</p>
   </div>
 
-  <div class="entry-list">
-    {% assign recent_notes = site.notes | sort: "date" | reverse | slice: 0, 3 %}
-    {% for note in recent_notes %}
-      <article class="entry">
-        <h3><a href="{{ note.url | relative_url }}">{{ note.title }}</a></h3>
-        <p>{{ note.summary }}</p>
+  <aside class="home-block">
+    <p class="eyebrow">Open Questions</p>
+    <ul class="question-list">
+      <li>How do models generalize beyond the examples they see?</li>
+      <li>What assumptions hide inside common learning algorithms?</li>
+      <li>When does a simple model beat a complex one?</li>
+    </ul>
+  </aside>
+
+  <aside class="home-block">
+    <p class="eyebrow">Learning Areas</p>
+    <div class="tag-cloud" aria-label="Learning areas">
+      <a href="{{ '/notes/' | relative_url }}">Machine Learning</a>
+      <a href="{{ '/projects/' | relative_url }}">Projects</a>
+      <a href="{{ '/reflections/' | relative_url }}">Talks</a>
+      <span>Systems</span>
+      <span>Theory</span>
+      <span>Papers</span>
+    </div>
+  </aside>
+
+  <div class="home-block full">
+    <div class="block-heading">
+      <p class="eyebrow">Featured Project</p>
+      <a href="{{ '/projects/' | relative_url }}">Project archive</a>
+    </div>
+    {% assign featured_project = site.projects | first %}
+    {% if featured_project %}
+      <article class="feature-row">
+        <div>
+          <h2><a href="{{ featured_project.url | relative_url }}">{{ featured_project.title }}</a></h2>
+          <p>{{ featured_project.summary }}</p>
+        </div>
         <div class="meta-row">
-          {% if note.course %}<span>{{ note.course }}</span>{% endif %}
-          {% if note.status %}<span>{{ note.status }}</span>{% endif %}
+          {% if featured_project.status %}<span>{{ featured_project.status }}</span>{% endif %}
+          {% if featured_project.tools %}<span>{{ featured_project.tools | join: " / " }}</span>{% endif %}
         </div>
       </article>
-    {% endfor %}
+    {% endif %}
   </div>
 </section>
