@@ -9,7 +9,7 @@ title: Home
 <section class="home-hero">
   <div class="home-hero-copy">
     <p class="eyebrow">Computer Science Learning Garden</p>
-    <h1>Gary Yeh</h1>
+    <h1 class="typing-name" data-typing-text="Gary Yeh">Gary Yeh</h1>
     <p class="intro-copy">
       A public notebook for learning computer science through courses, papers,
       talks, and projects. I use this space to make ideas concrete: what I

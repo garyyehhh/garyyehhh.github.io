@@ -38,12 +38,14 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--ink);
+  cursor: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='12' cy='12' r='5' fill='%235f615a' fill-opacity='0.58'/%3E%3C/svg%3E") 12 12, auto;
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.65;
 }
 
 a {
   color: inherit;
+  cursor: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='12' cy='12' r='6' fill='%23050505' fill-opacity='0.72'/%3E%3C/svg%3E") 12 12, pointer;
   text-decoration-color: currentColor;
   text-decoration-thickness: 0.08em;
   text-underline-offset: 0.18em;
@@ -179,6 +181,77 @@ img {
   font-size: clamp(4rem, 9vw, 8.2rem);
   line-height: 0.88;
   letter-spacing: 0;
+}
+
+.typing-name {
+  display: inline-block;
+  min-width: 3.75em;
+  min-height: 1em;
+  line-height: 0.88;
+}
+
+.typing-caret {
+  width: 0.3em;
+  height: 0.9em;
+  display: inline-block;
+  margin-left: -0.025em;
+  color: #050505;
+  opacity: 0.95;
+  background: url("data:image/svg+xml,%3Csvg width='72' height='260' viewBox='0 0 72 260' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 16H27L36 26L45 16H63M36 26V234M9 244H27L36 234L45 244H63' stroke='%23050505' stroke-width='15' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+  vertical-align: -0.12em;
+  filter: drop-shadow(0 0.018em 0.055em rgba(5, 5, 5, 0.26));
+  transform-origin: center;
+} 
+
+.typing-name.is-typing .typing-caret {
+  animation: caret-type 520ms ease-in-out infinite;
+}
+
+.typing-name.is-typing.caret-bump .typing-caret {
+  animation: caret-hit 180ms ease-out;
+}
+
+.typing-name.is-finishing .typing-caret {
+  animation: caret-finish 900ms steps(1) 3;
+}
+
+@keyframes caret-hit {
+  0% {
+    transform: translateX(-0.05em) scaleY(0.76);
+  }
+
+  55% {
+    transform: translateX(0.035em) scaleY(1.08);
+  }
+
+  100% {
+    transform: translateX(0) scaleY(0.9);
+  }
+}
+
+@keyframes caret-type {
+  0%,
+  100% {
+    opacity: 1;
+    transform: translateY(0) scaleY(0.9);
+  }
+
+  50% {
+    opacity: 0.68;
+    transform: translateY(-0.015em) scaleY(1.04);
+  }
+}
+
+@keyframes caret-finish {
+  0%,
+  49% {
+    opacity: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 0;
+  }
 }
 
 .intro-copy {
