@@ -6,6 +6,10 @@ status: "Template"
 tags:
   - supervised learning
   - template
+trail:
+  - Cornell CS4780
+  - Models
+  - Study System
 summary: "A reusable structure for turning a lecture topic into a clear, application-ready learning note."
 ---
 

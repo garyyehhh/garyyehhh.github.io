@@ -6,7 +6,12 @@ status: "In progress"
 tags:
   - machine learning
   - study log
+trail:
+  - Cornell CS4780
+  - Generalization
+  - Foundations
 summary: "A starter map for tracking the ideas I want to understand deeply while working through Cornell CS4780."
+thinking_excerpt: "What assumptions make learning possible, and why do some models generalize beyond the data they were trained on?"
 ---
 
 ## Why this course matters to me
