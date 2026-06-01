@@ -1,6 +1,7 @@
 ---
 title: "Supervised Learning: Note Template"
 date: 2026-05-24
+updated: 2026-05-24
 course: "Cornell CS4780"
 status: "Template"
 tags:

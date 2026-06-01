@@ -1,6 +1,7 @@
 ---
 title: "CS4780 Learning Map"
 date: 2026-05-25
+updated: 2026-05-25
 course: "Cornell CS4780"
 status: "In progress"
 tags:

@@ -50,6 +50,7 @@ Create a Markdown file in `_notes/` with front matter like:
 ---
 title: "My Note Title"
 date: 2026-05-25
+updated: 2026-05-25
 course: "Cornell CS4780"
 status: "Draft"
 tags:
@@ -57,6 +58,10 @@ tags:
 summary: "One sentence about what this note captures."
 ---
 ```
+
+Use `date` for where a note appears in the full Notebook archive. Use `updated`
+for what appears as "Latest from the notebook" in the homepage On the desk
+section.
 
 ## Adding projects
 

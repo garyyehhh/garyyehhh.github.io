@@ -2,8 +2,13 @@
 title: Home
 ---
 
-{% assign latest_note = site.notes | sort: "date" | reverse | first %}
-{% assign recent_notes = site.notes | sort: "date" | reverse | slice: 0, 3 %}
+{% assign dated_notes = site.notes | sort: "date" | reverse %}
+{% assign updated_notes = site.notes | where_exp: "note", "note.updated" | sort: "updated" | reverse %}
+{% assign latest_note = updated_notes | first %}
+{% unless latest_note %}
+  {% assign latest_note = dated_notes | first %}
+{% endunless %}
+{% assign recent_notes = dated_notes | slice: 0, 2 %}
 {% assign featured_project = site.projects | first %}
 
 <section class="home-hero">
@@ -21,20 +26,25 @@ title: Home
     </div>
   </div>
 
-  <aside class="desk-note" aria-label="Current desk note">
-    <p class="soft-label">Current desk note</p>
-    <h2>Cornell CS4780</h2>
-    <p>Machine learning foundations, model evaluation, generalization, and the mathematics behind learning from data.</p>
-    <div class="thread-note">
-      <span>Thread I'm following</span>
-      <p>How do models learn patterns that still hold beyond the training data?</p>
-    </div>
-    <div class="learning-trail" aria-label="Learning trail">
-      <span>Foundations</span>
-      <span>Models</span>
-      <span>Generalization</span>
-      <span>Application</span>
-    </div>
+  <aside class="learning-sphere" aria-label="Ideas in orbit" data-learning-sphere>
+    <p class="soft-label">Ideas in orbit</p>
+    <ul>
+      <li>Machine Learning</li>
+      <li>Generalization</li>
+      <li>Models</li>
+      <li>Evaluation</li>
+      <li>Foundations</li>
+      <li>Optimization</li>
+      <li>Probability</li>
+      <li>Notes</li>
+      <li>Projects</li>
+      <li>Systems</li>
+      <li>Papers</li>
+      <li>Talks</li>
+      <li>Questions</li>
+      <li>Visualization</li>
+      <li>Cornell CS4780</li>
+    </ul>
   </aside>
 </section>
 
