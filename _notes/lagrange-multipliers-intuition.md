@@ -8,9 +8,9 @@ tags:
   - Calculus
   - Optimization
 trail:
+  - Mathematics
   - Multivariable Calculus
-  - Optimization
-  - Geometry
+  - Constrained Optimization
 summary: "My intuition for Lagrange multipliers through contours, constraints, and tangency."
 thinking_excerpt: "A crossing means there is still room to improve. A tangent point means we ran out of improving directions along the allowed path."
 math: true
@@ -418,5 +418,4 @@ That is a small but important point. The equation finds places where an optimum 
 ## Sources
 
 Shibuya, Naoki. (2020). Lagrange Multiplier Demystified. https://naokishibuya.github.io/blog/2020-10-04-lagrange-multiplier-demystified/
-
 
