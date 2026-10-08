@@ -28,4 +28,7 @@ description: Portfolio projects and build logs.
       </article>
     {% endfor %}
   </div>
+  {% if projects.size == 0 %}
+    <p class="section-signal" role="status">Work in progress. Project entries will appear here soon.</p>
+  {% endif %}
 </section>

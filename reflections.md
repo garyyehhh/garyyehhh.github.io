@@ -28,4 +28,7 @@ description: Notes from talks, papers, lectures, and conferences.
       </article>
     {% endfor %}
   </div>
+  {% if reflections.size == 0 %}
+    <p class="section-signal" role="status">Work in progress. Reflections will appear here as they take shape.</p>
+  {% endif %}
 </section>

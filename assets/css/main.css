@@ -913,6 +913,54 @@ img {
   gap: 1rem;
 }
 
+.notebook-topics,
+.notebook-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.5rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  letter-spacing: 0;
+}
+
+.notebook-topics ul {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  min-width: 0;
+  gap: 0.25rem 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.notebook-topics li {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.notebook-topics li + li::before,
+.notebook-meta > * + *::before {
+  content: "\00b7";
+  margin: 0 0.5rem;
+}
+
+.notebook-meta {
+  gap: 0.25rem 0;
+  margin-top: 0.4rem;
+}
+
+.section-signal {
+  max-width: 44rem;
+  margin: 1.5rem 0 0;
+  padding: 0.65rem 0 0.65rem 1rem;
+  border-left: 2px solid var(--accent-soft);
+  color: var(--muted);
+  font-size: 0.95rem;
+  font-style: italic;
+}
+
 .entry {
   padding: 1.25rem;
 }
@@ -979,6 +1027,23 @@ img {
 .page-header h1,
 .article-header h1 {
   font-size: clamp(2.5rem, 6vw, 4.6rem);
+}
+
+.page-header.notebook-header {
+  padding: 3rem 0 1.25rem;
+}
+
+.notebook-header h1 {
+  font-size: 2.5rem;
+}
+
+.notebook-header p {
+  margin: 0.75rem 0 0;
+}
+
+.section.compact.notebook-entries {
+  width: min(1080px, calc(100% - 32px));
+  padding-top: 1rem;
 }
 
 .article {
@@ -1051,6 +1116,498 @@ img {
   background: #162426;
   color: #f9fbf8;
   border-radius: 8px;
+}
+
+.article-body .study-setup {
+  display: grid;
+  gap: 0.15rem;
+  margin: 1.1rem 0 1.35rem;
+  padding: 1rem 1.15rem;
+  background: #162426;
+  color: #f9fbf8;
+  border-radius: 8px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.95em;
+  line-height: 1.55;
+}
+
+.article-body .study-setup-line {
+  display: grid;
+  grid-template-columns: 7.2rem minmax(0, 1fr);
+  align-items: baseline;
+}
+
+.article-body .study-setup-label {
+  font-weight: 700;
+}
+
+.article-body .study-setup mjx-container {
+  color: inherit;
+}
+
+.article-body .probability-likelihood-visual {
+  margin: 2rem 0 2.6rem;
+  padding: 0 0 1.35rem;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.article-body .visual-thread-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0 0.9rem;
+  border-bottom: 1px solid rgba(5, 5, 5, 0.08);
+}
+
+.article-body .visual-thread-kicker {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.article-body .visual-thread-copy {
+  color: rgba(5, 5, 5, 0.52);
+  font-size: 0.82rem;
+  font-style: italic;
+}
+
+.article-body .probability-likelihood-panels {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1rem, 4vw, 2.8rem);
+  padding-top: 1.15rem;
+}
+
+.article-body .probability-likelihood-panel {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.article-body .probability-likelihood-panel,
+.article-body .probability-likelihood-panel text {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.article-body .visual-kicker {
+  fill: var(--muted);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.article-body .visual-heading {
+  fill: var(--ink);
+  font-size: 18px;
+  font-weight: 750;
+}
+
+.article-body .visual-note,
+.article-body .visual-axis-label,
+.article-body .visual-chart-label,
+.article-body .visual-y-label,
+.article-body .visual-footnote {
+  fill: var(--muted);
+  font-size: 13px;
+}
+
+.article-body .visual-value {
+  font-size: 20px;
+  font-weight: 750;
+}
+
+.article-body .visual-annotation {
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.article-body .visual-chart-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.article-body .visual-y-label {
+  font-size: 11px;
+  letter-spacing: 0.02em;
+}
+
+.article-body .visual-footnote {
+  font-size: 12px;
+  font-style: italic;
+}
+
+.article-body .visual-tick {
+  fill: var(--muted);
+  font-size: 11px;
+}
+
+.article-body .visual-axis {
+  stroke: #c9c6ba;
+  stroke-width: 1.35;
+}
+
+.article-body .visual-bar {
+  fill: rgba(74, 145, 206, 0.2);
+  rx: 2;
+}
+
+.article-body .visual-bar-observed {
+  fill: rgba(74, 145, 206, 0.78);
+  transition: filter 180ms ease, fill 180ms ease;
+}
+
+.article-body .visual-likelihood-curve {
+  fill: none;
+  stroke: #3f5f4b;
+  stroke-width: 4;
+  stroke-linecap: round;
+}
+
+.article-body .visual-guide {
+  stroke-width: 1.4;
+  stroke-dasharray: 4 5;
+}
+
+.article-body .visual-blue-stroke {
+  stroke: rgba(74, 145, 206, 0.72);
+}
+
+.article-body .visual-green-stroke {
+  stroke: #3f5f4b;
+}
+
+.article-body .visual-blue-fill {
+  fill: rgba(74, 145, 206, 0.92);
+}
+
+.article-body .visual-green-fill {
+  fill: #3f5f4b;
+}
+
+.article-body .visual-blue-text {
+  fill: rgba(58, 111, 154, 0.94);
+}
+
+.article-body .visual-green-text {
+  fill: #3f5f4b;
+}
+
+.article-body .visual-observation,
+.article-body .visual-mle-point {
+  cursor: default;
+}
+
+.article-body .visual-observation .visual-guide,
+.article-body .visual-observation .visual-blue-fill,
+.article-body .visual-observation .visual-annotation,
+.article-body .visual-mle-point .visual-guide,
+.article-body .visual-mle-point .visual-green-fill,
+.article-body .visual-mle-point .visual-annotation {
+  transition: opacity 180ms ease, filter 180ms ease, stroke-width 180ms ease;
+}
+
+.article-body .visual-observation:hover .visual-bar-observed,
+.article-body .visual-observation:focus .visual-bar-observed,
+.article-body .visual-observation:focus-visible .visual-bar-observed {
+  fill: rgba(74, 145, 206, 0.96);
+  filter: drop-shadow(0 3px 4px rgba(74, 145, 206, 0.2));
+}
+
+.article-body .visual-observation:hover .visual-guide,
+.article-body .visual-observation:focus .visual-guide,
+.article-body .visual-observation:focus-visible .visual-guide,
+.article-body .visual-mle-point:hover .visual-guide,
+.article-body .visual-mle-point:focus .visual-guide,
+.article-body .visual-mle-point:focus-visible .visual-guide {
+  stroke-width: 2;
+}
+
+.article-body .visual-mle-point:hover .visual-green-fill,
+.article-body .visual-mle-point:focus .visual-green-fill,
+.article-body .visual-mle-point:focus-visible .visual-green-fill {
+  filter: drop-shadow(0 3px 4px rgba(63, 95, 75, 0.25));
+}
+
+.article-body .visual-observation:focus-visible,
+.article-body .visual-mle-point:focus-visible {
+  outline: none;
+}
+
+.article-body .visual-toss-head {
+  fill: rgba(74, 145, 206, 0.12);
+  stroke: rgba(74, 145, 206, 0.55);
+  stroke-width: 1;
+  rx: 4;
+}
+
+.article-body .visual-toss-tail {
+  fill: rgba(63, 95, 75, 0.1);
+  stroke: rgba(63, 95, 75, 0.5);
+  stroke-width: 1;
+  rx: 4;
+}
+
+.article-body .visual-toss-label {
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.article-body .visual-comparison-dot {
+  fill: #c9c6ba;
+}
+
+.article-body .probability-likelihood-visual figcaption {
+  width: min(780px, 92%);
+  margin: 1rem auto 0;
+  color: rgba(5, 5, 5, 0.58);
+  font-size: 0.88rem;
+  line-height: 1.52;
+}
+
+.article-body .probability-likelihood-note {
+  margin: 2.1rem 0 2.6rem;
+  padding: 1rem 0 1.2rem;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.article-body .probability-likelihood-note .probability-likelihood-panels {
+  grid-template-columns: minmax(0, 1fr) minmax(5.5rem, 8rem) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(0.75rem, 2vw, 1.7rem);
+  padding-top: 0;
+}
+
+.article-body .probability-likelihood-sketch {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.article-body .probability-likelihood-sketch text {
+  font-family: var(--font-serif);
+}
+
+.article-body .probability-likelihood-turn {
+  display: grid;
+  justify-items: center;
+  gap: 0.35rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+.article-body .probability-likelihood-turn::before,
+.article-body .probability-likelihood-turn::after {
+  width: 1px;
+  height: 1.55rem;
+  background: var(--line-strong);
+  content: "";
+}
+
+.article-body .probability-likelihood-turn span {
+  font-family: var(--font-sans);
+  font-size: 0.64rem;
+  letter-spacing: 0.04em;
+}
+
+.article-body .probability-likelihood-turn strong {
+  color: var(--ink);
+  font-family: var(--font-serif);
+  font-size: 0.96rem;
+  font-weight: 600;
+}
+
+.article-body .probability-likelihood-sketch .sketch-equation {
+  fill: var(--ink);
+  font-size: 27px;
+  font-weight: 600;
+}
+
+.article-body .probability-likelihood-sketch .sketch-question {
+  fill: var(--ink);
+  font-size: 19px;
+  font-weight: 600;
+}
+
+.article-body .probability-likelihood-sketch .sketch-baseline,
+.article-body .probability-likelihood-sketch .sketch-data-underline {
+  fill: none;
+  stroke: rgba(5, 5, 5, 0.2);
+  stroke-width: 1.35;
+}
+
+.article-body .probability-likelihood-sketch .sketch-bar {
+  fill: rgba(74, 145, 206, 0.16);
+  rx: 2;
+}
+
+.article-body .probability-likelihood-sketch .sketch-bar-active {
+  fill: rgba(74, 145, 206, 0.72);
+  transition: fill 180ms ease, filter 180ms ease;
+}
+
+.article-body .probability-likelihood-sketch .sketch-guide {
+  fill: none;
+  stroke-width: 1.35;
+  stroke-dasharray: 4 5;
+}
+
+.article-body .probability-likelihood-sketch .sketch-blue-stroke {
+  stroke: rgba(74, 145, 206, 0.78);
+}
+
+.article-body .probability-likelihood-sketch .sketch-green-stroke {
+  stroke: #3f5f4b;
+}
+
+.article-body .probability-likelihood-sketch .sketch-blue-dot {
+  fill: rgba(74, 145, 206, 0.92);
+}
+
+.article-body .probability-likelihood-sketch .sketch-green-dot {
+  fill: #3f5f4b;
+  transition: filter 180ms ease;
+}
+
+.article-body .probability-likelihood-sketch .sketch-blue {
+  fill: rgba(58, 111, 154, 0.94);
+}
+
+.article-body .probability-likelihood-sketch .sketch-green {
+  fill: #3f5f4b;
+}
+
+.article-body .probability-likelihood-sketch .sketch-annotation {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.article-body .probability-likelihood-sketch .sketch-tick {
+  fill: var(--muted);
+  font-family: var(--font-sans);
+  font-size: 11px;
+}
+
+.article-body .probability-likelihood-sketch .sketch-token {
+  font-family: var(--font-sans);
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.article-body .probability-likelihood-sketch .sketch-likelihood-curve {
+  fill: none;
+  stroke: #3f5f4b;
+  stroke-width: 4;
+  stroke-linecap: round;
+  transition: filter 180ms ease, stroke-width 180ms ease;
+}
+
+.article-body .probability-likelihood-sketch .sketch-observation,
+.article-body .probability-likelihood-sketch .sketch-mle {
+  cursor: default;
+}
+
+.article-body .probability-sketch:hover .sketch-bar-active {
+  fill: rgba(74, 145, 206, 0.94);
+  filter: drop-shadow(0 3px 4px rgba(74, 145, 206, 0.18));
+}
+
+.article-body .likelihood-sketch:hover .sketch-likelihood-curve {
+  filter: drop-shadow(0 3px 4px rgba(63, 95, 75, 0.17));
+  stroke-width: 4.5;
+}
+
+.article-body .likelihood-sketch:hover .sketch-green-dot {
+  filter: drop-shadow(0 3px 4px rgba(63, 95, 75, 0.22));
+}
+
+.article-body .probability-likelihood-note figcaption {
+  width: min(760px, 92%);
+  margin: 0.75rem auto 0;
+  color: rgba(5, 5, 5, 0.58);
+  font-size: 0.9rem;
+  line-height: 1.52;
+}
+
+.article-body .math-detour {
+  margin: 2.15rem 0 2.3rem;
+  padding: 0.1rem 0 0.15rem 1rem;
+  border-left: 2px solid rgba(63, 95, 75, 0.34);
+}
+
+.article-body .math-detour summary {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  gap: 0.55rem;
+  color: var(--ink);
+  cursor: pointer;
+  font-family: var(--font-serif);
+  font-size: 1.08rem;
+  font-weight: 600;
+  list-style: none;
+  min-height: 2.55rem;
+  padding: 0.2rem 0.55rem 0.2rem 0;
+  border-bottom: 1px solid rgba(63, 95, 75, 0.2);
+  transition: border-color 160ms ease, color 160ms ease;
+}
+
+.article-body .math-detour summary::-webkit-details-marker {
+  display: none;
+}
+
+.article-body .math-detour summary::before {
+  display: grid;
+  width: 1.4rem;
+  height: 1.4rem;
+  place-items: center;
+  border: 1px solid rgba(63, 95, 75, 0.55);
+  border-radius: 50%;
+  color: var(--accent);
+  content: "+";
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1;
+  text-align: center;
+}
+
+.article-body .math-detour[open] summary::before {
+  content: "-";
+}
+
+.article-body .math-detour summary:hover {
+  border-color: rgba(63, 95, 75, 0.56);
+  color: var(--accent);
+}
+
+.article-body .math-detour summary:hover::before {
+  background: rgba(63, 95, 75, 0.08);
+}
+
+.article-body .math-detour summary:focus-visible {
+  outline: 2px solid rgba(74, 145, 206, 0.56);
+  outline-offset: 4px;
+}
+
+.article-body .math-detour-content {
+  padding-top: 0.45rem;
+}
+
+.article-body .math-detour-content > :last-child {
+  margin-bottom: 0.1rem;
+}
+
+.article-body .math-detour-caveat {
+  margin-top: 1rem;
+  color: var(--muted);
+  font-size: 0.92em;
 }
 
 .article-body mjx-container[jax="SVG"][display="true"] {
@@ -1226,6 +1783,39 @@ img {
 }
 
 @media (max-width: 760px) {
+  .article-body .probability-likelihood-note .probability-likelihood-panels {
+    grid-template-columns: 1fr;
+    gap: 0.9rem;
+  }
+
+  .article-body .probability-likelihood-turn {
+    grid-template-columns: auto auto auto;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.1rem 0;
+  }
+
+  .article-body .probability-likelihood-turn::before,
+  .article-body .probability-likelihood-turn::after {
+    width: 2rem;
+    height: 1px;
+  }
+
+  .article-body .probability-likelihood-turn span {
+    display: none;
+  }
+
+  .article-body .visual-thread-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .article-body .probability-likelihood-panels {
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+  }
+
   .site-header {
     position: static;
   }

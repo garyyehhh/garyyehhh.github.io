@@ -1,5 +1,6 @@
 ---
 title: "Talk Reflection Template"
+published: false
 date: 2026-05-23
 source_type: "Talk"
 source: "Conference, seminar, or lecture name"

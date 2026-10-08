@@ -2,6 +2,7 @@
 title: "Machine Learning Concept Visualizer"
 year: 2026
 status: "Idea"
+published: false
 tools:
   - Python
   - JavaScript

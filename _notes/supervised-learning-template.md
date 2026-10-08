@@ -4,13 +4,14 @@ date: 2026-05-24
 updated: 2026-05-24
 course: "Cornell CS4780"
 status: "Template"
+published: false
 tags:
   - supervised learning
   - template
 trail:
-  - Cornell CS4780
-  - Models
-  - Study System
+  - Machine Learning
+  - Supervised Learning
+  - Model Evaluation
 summary: "A reusable structure for turning a lecture topic into a clear, application-ready learning note."
 ---
 
