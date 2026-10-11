@@ -18,7 +18,7 @@ summary: "My intuition on the Bayes classifier and naive Bayes assumption"
 thinking_excerpt: "A perspective on classifiers"
 ---
 
-To understand why we need the naive Bayes assumption, and why it usually works out, we first need to see why and when the Bayes classifier breaks down.
+To understand why we need the naive Bayes assumption, we first need to see why and when the Bayes classifier breaks down.
 
 ## The Bayes classifier
 
@@ -216,7 +216,7 @@ $$
 
 From here, there are a few different scenarios where we can use the naive Bayes classifier. Each one depends on what kind of features we have.
 
-### Categorical Naive Bayes
+## Categorical Naive Bayes
 
 ### The setup
 
