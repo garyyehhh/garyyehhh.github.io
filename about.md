@@ -1,6 +1,7 @@
 ---
 title: About
 permalink: /about/
+published: false # temporarily hidden
 description: About Gary Yeh and this learning journal.
 ---
 

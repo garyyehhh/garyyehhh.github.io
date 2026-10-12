@@ -1,6 +1,7 @@
 ---
 title: Reflections
 permalink: /reflections/
+published: false # temporarily hidden
 description: Notes from talks, papers, lectures, and conferences.
 ---
 

@@ -119,7 +119,7 @@ title: Home
     <div>
       <p class="overline">Explore</p>
       <h2>Paths through the archive.</h2>
-      <p>Quiet doors into the notes, projects, and reflections that connect the work over time.</p>
+      <p>Quiet doors into the notes and projects that connect the work over time.</p>
     </div>
   </div>
 
@@ -136,10 +136,12 @@ title: Home
       <p>Small tools, experiments, and portfolio pieces connected back to the notes.</p>
     </a>
 
+    {% comment %} Temporarily hidden with the Reflections page.
     <a class="explore-card reflection-card" href="{{ '/reflections/' | relative_url }}">
       <span class="soft-label">Reflections</span>
       <strong>Talks, papers, and conversations</strong>
       <p>Lighter entries for ideas that changed my mind or opened a new question.</p>
     </a>
+    {% endcomment %}
   </div>
 </section>
