@@ -13,7 +13,7 @@ layout: default
       {% if page.date %}<span>{{ page.date | date: "%B %-d, %Y" }}</span>{% endif %}
       {% if page.status %}<span>{{ page.status }}</span>{% endif %}
       {% if page.tags %}
-        <span>{{ page.tags | join: " / " }}</span>
+        <span>{{ page.tags | join: " · " }}</span>
       {% endif %}
     </div>
   </header>
